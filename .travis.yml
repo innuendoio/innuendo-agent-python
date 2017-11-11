@@ -18,5 +18,4 @@ install:
 
 script:
   - innuendo-agent --help
-  - if [[ $TRAVIS_PYTHON_VERSION == 'nightly' ]]; then coverage run; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 'nightly' ]]; then codecov; fi
