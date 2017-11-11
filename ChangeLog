@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* Removed the 2.6 python version (no compatibility) and print the traceback (just for testing purposes in the meantime)
 * Fix travis file (no coverage run needed)
 * Keep testing code coverage (coverage run)
 * Remove -y (pip install doesn't need the -y for install just for uninstall)

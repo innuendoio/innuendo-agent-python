@@ -12,9 +12,6 @@ python:
 install:
   - python setup.py install
   - pip install -r requirements.txt
-  - pip install coverage
-  - pip install codecov
 
 script:
   - innuendo-agent --help
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then codecov; fi
