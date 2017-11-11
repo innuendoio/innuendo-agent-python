@@ -6,7 +6,7 @@ from builtins import dict
 import future
 
 # Imports
-import sys, imp, os, argparse
+import sys, imp, os, argparse, traceback
 from innuendo.utils import file_manager as fm
 from innuendo.utils import parser
 
@@ -24,9 +24,9 @@ class TerminalInterface():
             self.arguments = self.conf.get('arguments', dict())
             
         except IOError as e:
-            print(e)
+            traceback.print_exc(file=sys.stdout)
         except Exception as e:
-            print(e)
+            traceback.print_exc(file=sys.stdout)
 
     def process_args(self):
         arg_p = argparse.ArgumentParser()

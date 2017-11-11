@@ -1,7 +1,6 @@
 language: python
 
 python:
-  - 2.6
   - 2.7
   - 3.2
   - 3.3
@@ -18,4 +17,4 @@ install:
 
 script:
   - innuendo-agent --help
-  - if [[ $TRAVIS_PYTHON_VERSION == 'nightly' ]]; then codecov; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.7' ]]; then codecov; fi

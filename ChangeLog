@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+* Fix travis file (no coverage run needed)
+* Keep testing code coverage (coverage run)
+* Remove -y (pip install doesn't need the -y for install just for uninstall)
+* Testing Codecov
+* Fix the setup.cfg and README includes the build status for master
 * ChangeLog (also need to check if this make sense)
 * Forcing the installation of requirements.txt (need to check this, because should be self-contained the plugin)
 * Testing travis.yml without virtualenv
