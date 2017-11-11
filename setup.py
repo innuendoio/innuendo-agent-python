@@ -9,9 +9,9 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name = 'InnuendoAgent',
-    version = '0.1.0',
+    version = '0.1.1',
     packages = find_packages(),
-    install_requires = ['PyYAML>=3.12'],
+    install_requires=['PyYAML>=3.11', 'future>=0.16.0'],
 
     # Metadata for upload to PyPI
     author = 'Juan Urrego',
@@ -23,7 +23,7 @@ setup(
     url = 'https://github.com/juancho088/innuendo-agent-python',
     entry_points = {
         'console_scripts': [
-            'innuendo = innuendo.core.inspector:main'
+            'innuendo-agent = innuendo:main'
         ]
     }
 )

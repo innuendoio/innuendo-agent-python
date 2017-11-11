@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import inspect, cProfile, pstats, StringIO
 import yaml
 import time
