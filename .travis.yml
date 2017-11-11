@@ -13,7 +13,7 @@ python:
 install:
   - python setup.py install
   - pip install -r requirements.txt
-  - pip install codecov -y
+  - pip install codecov
 
 script:
   - innuendo-agent --help
