@@ -13,8 +13,10 @@ python:
 install:
   - python setup.py install
   - pip install -r requirements.txt
+  - pip install coverage
   - pip install codecov
 
 script:
   - innuendo-agent --help
-  - codecov
+  - if [[ $TRAVIS_PYTHON_VERSION == 'nightly' ]]; then coverage run; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 'nightly' ]]; then codecov; fi
