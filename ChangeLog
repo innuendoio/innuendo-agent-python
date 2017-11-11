@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* ChangeLog (also need to check if this make sense)
 * Forcing the installation of requirements.txt (need to check this, because should be self-contained the plugin)
 * Testing travis.yml without virtualenv
 * Using PBR to make all the configurations for the setuptools buidling Changes in travis.yml to solve and test
