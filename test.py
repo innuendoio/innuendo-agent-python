@@ -12,7 +12,6 @@ def test_func(p1, p2):
     
     return p1 + p2
 
-
 def f(x):
     return x**2-x
 
