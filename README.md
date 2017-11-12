@@ -4,3 +4,8 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/61c7090e2d644e109857/test_coverage)](https://codeclimate.com/github/innuendoio/innuendo-agent-python/test_coverage)
 
 # Innuendo Agent
+
+
+```
+tox
+```

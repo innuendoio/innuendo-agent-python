@@ -23,9 +23,9 @@ class FileManagerTestCase(unittest.TestCase):
             validate = fm.load_file(file_path).read()
             control = open(file_path, 'r').read()
 
-            self.assertTrue(validate == control, 
+            self.assertTrue(validate == control,
                 'Information loaded is not correct, expected value for {} is not the same as the one loaded'.format(f))
-    
+
     def test_load_file_size(self):
         self.files.extend(['test_load_xlarge.txt', 'test_load_xxlarge.txt'])
 
@@ -41,7 +41,7 @@ class FileManagerTestCase(unittest.TestCase):
             file_path = '{}/{}/{}'.format(self.path, self.dir, f)
 
             self.assertIsInstance(fm.load_yaml(file_path), dict, 'Error processing the YAML file, the result object is not a dict')
-        
+
     def test_load_yaml_is_bad(self):
         files_good = ['test_load_yml_bad_a.yml', 'test_load_yml_bad_b.yml']
 

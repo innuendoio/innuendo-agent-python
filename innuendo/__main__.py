@@ -1,17 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Entry Point for the agent app
+Main entry point
 """
 
-from innuendo.core.interface import TerminalInterface
-
-def main():
-    """
-    Main function that creates a Terminal Object and run it
-    """
-
-    app = TerminalInterface()
-    app.run()
+import innuendo
 
 if __name__ == '__main__':
-    main()
+    innuendo.main()

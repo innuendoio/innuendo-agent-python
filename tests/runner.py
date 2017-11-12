@@ -1,4 +1,11 @@
-import unittest, os
+# -*- coding: utf-8 -*-
+
+# Backwards compatibility imports
+from __future__ import absolute_import, division, print_function
+from builtins import *
+
+import unittest
+import os
 
 TEST_PATTERN = 'test*'
 CURRENT_DIR = os.path.dirname(__file__)
