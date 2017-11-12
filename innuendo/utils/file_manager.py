@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+Is on charge of manage the files (load, save, etc)
+"""
 
 # Backwards compatibility imports
 from __future__ import absolute_import, division, print_function
