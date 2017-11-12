@@ -17,7 +17,7 @@ class FileManagerTestCase(unittest.TestCase):
 
             # Files content
             validate = fm.load_file(file_path).read()
-            control = file(file_path, 'r').read()
+            control = open(file_path, 'r').read()
 
             self.assertTrue(validate == control, 
                 'Information loaded is not correct, expected value for {} is not the same as the one loaded'.format(f))

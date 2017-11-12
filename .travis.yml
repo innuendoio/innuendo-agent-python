@@ -25,6 +25,7 @@ script:
   - innuendo-agent --help
   - coverage run tests/runner.py -v
   - coverage xml -i
+  - coverage report -m
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
