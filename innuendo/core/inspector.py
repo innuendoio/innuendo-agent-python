@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+# Backwards compatibility imports
+from __future__ import absolute_import, division, print_function
+from builtins import *
+
 import inspect
 import cProfile
 import pstats
@@ -10,7 +14,7 @@ import time
 exclusions = ('__builtins__', '__doc__', '__file__')
 meta = {'__name__': None , '__package__': None}
 
-entities_visited = set() 
+entities_visited = set()
 
 def execution_time():
     start_time = time.time()
@@ -20,12 +24,12 @@ def execution_time():
 
 def wrapper(parent, name, func):
     def func_wrapper(*args, **kwargs):
-        
+
         try:
             s = StringIO.StringIO()
             sortby = 'cumulative'
         except Exception as e:
-            print e
+            print(e)
 
         try:
 
@@ -35,7 +39,7 @@ def wrapper(parent, name, func):
                 pr = cProfile.Profile()
                 pr.enable()
             except Exception as e:
-                print 'exc the profiler'
+                print('exc the profiler')
 
             ret = func(*args, **kwargs)
 
@@ -43,20 +47,20 @@ def wrapper(parent, name, func):
             try:
                 pr.disable()
 
-                
+
 
                 ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
                 ps.print_stats()
-                print s.getvalue()
+                print(s.getvalue())
 
-                print '--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time)
+                print('--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time))
             except Exception as e:
-                print '--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time)
-                print 'exc the profiler en disable'
+                print('--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time))
+                print('exc the profiler en disable')
 
             return ret
         except Exception as e:
-            print '----- Unhandled exception: %s -----' % (e)
+            print('----- Unhandled exception: %s -----' % (e))
 
             # Stop profiling
             try:
@@ -64,10 +68,10 @@ def wrapper(parent, name, func):
 
                 ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
                 ps.print_stats()
-                print s.getvalue()
-                print '--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time)
+                print(s.getvalue())
+                print('--- func: %s.%s spent %s seconds ---' % (parent.__name__, name,time.time() - start_time))
             except Exception as e:
-                print 'exc the profiler en disable'
+                print('exc the profiler en disable')
 
             raise e
 
@@ -88,12 +92,12 @@ def decorate(parent, element):
     value = element[1]
 
     if inspect.ismodule(value):
-        print 'module %s' % (name)
+        print('module %s' % (name))
         if name not in entities_visited:
             entities_visited.add(name)
             get_members(value)
     elif inspect.isclass(value):
-        print 'class %s' % (name)
+        print('class %s' % (name))
         if name not in entities_visited:
             entities_visited.add(name)
             get_members(value)
@@ -114,11 +118,11 @@ def main():
 
     conf = load_config('exclusions.yaml')
 
-    print conf
+    print(conf)
 
     entities_visited.update(conf.get('base', []))
 
-    print entities_visited
+    print(entities_visited)
 
     module_name = sys.argv[1]
     path = os.path.dirname(os.path.abspath(__file__))
@@ -126,19 +130,19 @@ def main():
     #from django.core.management.commands import runserver as module
 
     module = imp.load_source(module_name.split('.py')[0], '{}/{}'.format(path, module_name))
-    
+
     get_members(module)
 
     #module.__name__ = '__main__'
 
     module.main()
-    
+
     #module.BaseRunserverCommand.run()
 
     #os.system('python manage.py runserver')
 
 if __name__ == '__main__':
     main()
-    
-    
-            
+
+
+

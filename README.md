@@ -5,7 +5,8 @@
 
 # Innuendo Agent
 
+Run tests:
 
 ```
-tox
+tox testenv
 ```
