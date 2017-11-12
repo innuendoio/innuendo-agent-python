@@ -1,5 +1,10 @@
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+"""
+Setup file for the packaging of the app
+"""
+
 import os
+from setuptools import setup
 
 with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()

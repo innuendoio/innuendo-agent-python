@@ -5,23 +5,26 @@ from __future__ import absolute_import, division, print_function
 from builtins import *
 
 # Imports
-import sys, imp, os, argparse, traceback
-from innuendo.utils import file_manager as fm
-from innuendo.utils import parser
+import sys
+import imp
+import os
+import argparse
+import traceback
+from innuendo.utils import file_manager as fm, parser
 
 class TerminalInterface():
-    
+
     def __init__(self):
         try:
             # Private constants for PATHs
             self._PATH = os.path.dirname(os.path.abspath(__file__))
             self._CONF_FOLDER_PATH = 'config'
             self._CONF_FILE_PATH = '{}/../{}/conf.yml'.format(self._PATH, self._CONF_FOLDER_PATH)
-            
+
             # Loads a configuration file
             self.conf = fm.load_yaml(self._CONF_FILE_PATH)
             self.arguments = self.conf.get('arguments', dict())
-            
+
         except IOError as e:
             traceback.print_exc(file=sys.stdout)
         except Exception as e:
@@ -42,8 +45,7 @@ class TerminalInterface():
     def run(self):
         try:
             self.process_args()
-                
+
             print('Run Forrest')
         except Exception as e:
             print(e)
-

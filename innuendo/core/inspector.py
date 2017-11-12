@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import inspect, cProfile, pstats, StringIO
+import inspect
+import cProfile
+import pstats
+import StringIO
 import yaml
 import time
 

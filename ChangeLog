@@ -1,6 +1,18 @@
 CHANGES
 =======
 
+* Small fix in the parser
+* Unit tests for the file manager (includes some files txt)
+* Rollback of test changes
+* Just a test with just one python version
+* Coverage error fix (travisCI and coveragepy have an error in version 3.2)
+* File vs open fix (should always use open, file not always work, specially in version 3.2) Added the coverage report command
+* Solved issue with report, parallel option was generating a multiple files for parallel running but I never generate a merged one
+* Readme fix (badge error in copy paste)
+* - Now is including unit tests - travis is using coverage for reporting in code climate - Change of badges in readme - Change in coverage file, allowing parallel run and including innuendo (removing the source line)
+* Add again the coveragerc file (for unit test coverage tests), also changed the classifier in the setup
+* New Badges for Code Climate
+* Removed the codecov dependency (now we are suing code climate!)
 * Removed the 2.6 python version (no compatibility) and print the traceback (just for testing purposes in the meantime)
 * Fix travis file (no coverage run needed)
 * Keep testing code coverage (coverage run)
