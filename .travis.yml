@@ -14,7 +14,7 @@ cache: pip
 install:
   - python setup.py install
   - pip install -r requirements.txt
-  - pip install coverage
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.2 ]]; then pip install coverage==3.7.1; else pip install coverage; fi
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
 
