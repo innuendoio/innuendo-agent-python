@@ -1,6 +1,7 @@
 CHANGES
 =======
 
+* Setups tox for local test Small change just to keep in mind how to test locally Changes in inspector to be compatible with python 2 and 3
 * Now testing tox and other testing options
 * - Now using the canonic structure of the \_\_main\_\_.py (as it should) - Docs fixes - Changing code to be right with PEP8
 * Small fix in the parser
