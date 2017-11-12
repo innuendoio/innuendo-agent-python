@@ -14,7 +14,7 @@ _TYPES = {
 }
 
 def get_value_type(value):
-    value = str(value.strip())
+    value = str(value.strip()).lower()
     
     if value not in _TYPES:
         raise NotValidTypeException(value=value)
