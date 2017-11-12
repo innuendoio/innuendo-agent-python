@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # Backwards compatibility imports
-from __future__ import print_function
-from builtins import dict
-import future
+from __future__ import absolute_import, division, print_function
+from builtins import *
 
 # Imports
 import sys, imp, os, argparse, traceback

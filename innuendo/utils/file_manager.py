@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+
+# Backwards compatibility imports
+from __future__ import absolute_import, division, print_function
+from builtins import *
+
 import yaml
 
 def load_file(file_path):
