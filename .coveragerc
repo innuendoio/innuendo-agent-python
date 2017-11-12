@@ -1,6 +1,5 @@
 [run]
 branch = True
-parallel=True
 include = *innuendo/*
 
 [report]
